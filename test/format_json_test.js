@@ -1,16 +1,16 @@
 /**
- * Test case for formatJs.
+ * Test case for formatJson.
  * Runs with mocha.
  */
 'use strict'
 
-const formatJs = require('../lib/format_js.js')
+const formatJson = require('../lib/format_json.js')
 const assert = require('assert')
 const co = require('co')
 const fs = require('fs')
 const mkdirp = require('mkdirp')
 
-describe('format-js', () => {
+describe('format-json', () => {
   const tmpDir = `${__dirname}/../tmp`
   before(() => co(function * () {
     mkdirp.sync(tmpDir)
@@ -20,16 +20,17 @@ describe('format-js', () => {
 
   }))
 
-  it('Format js', () => co(function * () {
-    let filename = `${tmpDir}/foo.js`
+  it('Format json', () => co(function * () {
+    let filename = `${tmpDir}/bar.json`
     fs.writeFileSync(filename, `
-    "use strict";
-function print(value){
-    console.log(value)
-}
- print('hoge');
+  { "a": 123,      "c": "hoge", 
+    "b": "aaa" }
+    
+    
     `)
-    yield formatJs(filename)
+    yield formatJson(filename, {
+      sort: true
+    })
     assert.ok(
       fs.existsSync(filename)
     )

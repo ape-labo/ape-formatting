@@ -21,7 +21,8 @@
   "dependencies": {
     "co": "^4.6.0",
     "execcli": "^4.0.2",
-    "expandglob": "^3.0.2"
+    "expandglob": "^3.0.2",
+    "fmtjson": "^3.0.1"
   },
   "devDependencies": {
     "ape-covering": "^3.0.1",

@@ -74,8 +74,17 @@ Usage
 
 const apeFormatting = require('ape-formatting')
 
+// Format javascript files
 apeFormatting.formatJs('lib/*.js', {
   ignore: 'index.js'
+}).then(() => {
+  /* ... */
+})
+
+// Format json files
+apeFormatting.formatJson('lib/*.json', {
+  indent: 2,
+  sort: true
 }).then(() => {
   /* ... */
 })
@@ -105,5 +114,6 @@ This software is released under the [MIT License](https://github.com/ape-repo/ap
 Links
 ------
 
++ [standard-format](https://github.com/maxogden/standard-format)
 
 <!-- Links End -->
