@@ -6,21 +6,20 @@
 
 const formatJs = require('../lib/format_js.js')
 const assert = require('assert')
-const co = require('co')
 const fs = require('fs')
 const mkdirp = require('mkdirp')
 
 describe('format-js', () => {
   const tmpDir = `${__dirname}/../tmp`
-  before(() => co(function * () {
+  before(async () => {
     mkdirp.sync(tmpDir)
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Format js', () => co(function * () {
+  it('Format js', async () => {
     let filename = `${tmpDir}/foo.js`
     fs.writeFileSync(filename, `
     "use strict";
@@ -29,11 +28,11 @@ function print(value){
 }
  print('hoge');
     `)
-    yield formatJs(filename)
+    await formatJs(filename)
     assert.ok(
       fs.existsSync(filename)
     )
-  }))
+  })
 })
 
 /* global describe, before, after, it */

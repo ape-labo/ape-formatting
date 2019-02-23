@@ -1,11 +1,11 @@
 {
   "name": "ape-formatting",
-  "version": "1.0.3",
+  "version": "2.0.1",
   "description": "Format files",
   "main": "lib",
   "scripts": {
     "test": "./ci/test.js",
-    "prepublish": "./ci/build.js"
+    "prepare": "./ci/build.js"
   },
   "repository": "ape-repo/ape-formatting",
   "keywords": [],
@@ -20,25 +20,23 @@
   },
   "homepage": "https://github.com/ape-repo/ape-formatting#readme",
   "dependencies": {
-    "aglob": "^1.0.1",
-    "co": "^4.6.0",
-    "execcli": "^4.0.6",
-    "fmtjson": "^3.0.2"
+    "aglob": "^3.0.1",
+    "execcli": "^5.0.3",
+    "fmtjson": "^4.0.1"
   },
   "devDependencies": {
-    "ape-covering": "^3.0.3",
-    "ape-releasing": "^4.0.1",
-    "ape-reporting": "^3.0.1",
+    "ape-releasing": "^5.0.1",
     "ape-tasking": "^4.0.3",
     "ape-testing": "^4.0.1",
-    "ape-tmpl": "^5.0.12",
-    "ape-updating": "^4.0.4",
-    "coz": "^6.0.5",
+    "ape-tmpl": "^6.0.12",
+    "ape-updating": "^5.0.1",
+    "coz": "^7.0.8",
     "injectmock": "^2.0.0",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "standard-format": "^2.2.4"
   },
   "engines": {
-    "node": ">=6",
-    "npm": ">=3"
+    "node": ">=8",
+    "npm": ">=5"
   }
 }
